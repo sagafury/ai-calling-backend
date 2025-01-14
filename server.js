@@ -7,7 +7,16 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Use Railway's dynamic port or fallback to 3000
 
 // Middleware
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+    cors({
+        origin: "*", // Allow all origins (use with caution in production)
+        methods: ["GET", "POST"], // Allowed HTTP methods
+        allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    })
+);
+
 app.use(express.json());
 
 // Check for required environment variables
