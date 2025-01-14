@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Use Railway's dynamic port or fallback to 3000
 
 // Middleware
-const cors = require("cors");
 
 app.use(
     cors({
